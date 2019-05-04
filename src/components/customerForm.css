@@ -1,0 +1,22 @@
+.wholeForm{
+    padding-top: 30px; 
+    padding-left: 50px;
+}
+
+.title{
+  font-size: 40px; 
+  color: white;
+}
+
+.formElements{
+    display: flex; 
+    flex-direction: row;
+}
+
+.formFields{
+    color: white;
+}
+
+.formInputs{
+    margin-left: 10px;
+}
