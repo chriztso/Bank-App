@@ -7,16 +7,34 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            login: true
+            login: true,
+            form: false,
+            username: null, 
+            password: null
         }
+    this.handlePassword = this.handlePassword.bind(this);   
+    this.handleUsername = this.handleUsername.bind(this);   
+    this.submitLogin = this.submitLogin.bind(this);   
     }
+
+    handleUsername(event){
+        this.setState({username: event.target.value})
+    }
+    handlePassword(event){
+        this.setState({password: event.target.value})
+    }
+
+    submitLogin(){
+        this.setState({login: false, form: true});
+    }
+
     render(){
         var {login} = this.state; 
         var loginPage;
         if(login === true){
             loginPage = 
             <div >
-                <LoginPage />
+                <LoginPage handlePassword = {this.handlePassword} handleUsername = {this.handleUsername} submitLogin={this.submitLogin}/>
             </div>
         }
         return (

@@ -30,13 +30,17 @@ class LoginPage extends React.Component{
 
                         <div className={login.fieldsInput}>
                             <div>
-                            <input type ='text'></input>
+                              <input type ='text' onChange={this.props.handleUsername}></input>
                             </div>
                             <div>
-                            <input type ='text'></input>
+                              <input type ='text' onChange={this.props.handlePassword}></input>
+                            </div>
+                            <div>
+                              <input type ='submit' onClick={this.props.submitLogin}></input>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
 
