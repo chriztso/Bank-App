@@ -1,0 +1,26 @@
+.wholePage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    font-size: 18px;
+    color: white;
+}
+
+.fields{
+    display: flex; 
+    flex-direction: column;
+    color: white;
+}
+
+.fieldsInput{
+    display: flex; 
+    flex-direction: column;
+}
+
+.credentials{
+    display: flex; 
+    flex-direction: row;
+}
