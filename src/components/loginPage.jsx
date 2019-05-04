@@ -13,7 +13,7 @@ class LoginPage extends React.Component{
         return (
             <div className={login.wholePage}>
 
-                <div> 
+                <div className={login.wholePageInner}> 
                     <div className={login.title}>
                         Pace Bank
                     </div>

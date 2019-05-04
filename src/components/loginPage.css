@@ -5,7 +5,7 @@
 }
 
 .title{
-    font-size: 18px;
+    font-size: 40px;
     color: white;
 }
 
@@ -21,6 +21,11 @@
 }
 
 .credentials{
+    margin-top: 50px;
     display: flex; 
     flex-direction: row;
+}
+
+.wholePageInner{
+    padding-top: 100px;
 }
