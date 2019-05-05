@@ -6,8 +6,13 @@ class LoginPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            
+            hidden: false
         }
+    this.hidePassword = this.hidePassword.bind(this);    
+    }
+
+    hidePassword(){
+        this.setState({hidden : !this.state.hidden});
     }
     render(){
         return (
@@ -30,7 +35,8 @@ class LoginPage extends React.Component{
                               <input type ='text' onChange={this.props.handleUsername}></input>
                             </div>
                             <div>
-                              <input type ='text' onChange={this.props.handlePassword}></input>
+                              <input type ={this.state.hidden ? 'password': 'text'} onChange={this.props.handlePassword}></input>
+                              <input type ='submit' value="Show/Hide" onClick={this.hidePassword}></input>
                             </div>
                             <div>
                               <input type ='submit' onClick={this.props.submitLogin}></input>
