@@ -13,7 +13,8 @@ class App extends React.Component{
             form: false,
             product: false,
             username: null, 
-            password: null
+            password: null, 
+            warning: false
         }
     this.handlePassword = this.handlePassword.bind(this);   
     this.handleUsername = this.handleUsername.bind(this);   
@@ -29,7 +30,11 @@ class App extends React.Component{
     }
 
     submitLogin(){
-        this.setState({login: false, form: true});
+        if(this.state.username !== null && this.state.password !== null){
+          this.setState({login: false, form: true});
+        } else{
+           this.setState({warning: true});
+        }    
     }
 
     submitForm(){
@@ -40,13 +45,29 @@ class App extends React.Component{
         var {login} = this.state; 
         var {form} = this.state; 
         var {product} = this.state;
+        var warningOne;
+        var warningTwo;
         var loginPage;
         var customerForm;
         var products;
         if(login === true){
+            if(this.state.username === null && this.state.warning === true){
+                warningOne = 
+                <div className={AppStyle.warning}> 
+                    Please enter username.
+                </div>
+            }
+            if(this.state.password === null && this.state.warning === true){
+                warningTwo = 
+                <div className={AppStyle.warning}> 
+                    Please enter password.
+                </div>
+            }
             loginPage = 
             <div >
                 <LoginPage handlePassword = {this.handlePassword} handleUsername = {this.handleUsername} submitLogin={this.submitLogin}/>
+                {warningOne}
+                {warningTwo}
             </div>
         }
         if(form === true){
@@ -61,6 +82,7 @@ class App extends React.Component{
                 <ProductList />
             </div>
         }
+        
         return (
             <div className={AppStyle.appBackground}>
               <div className={AppStyle.title}>
