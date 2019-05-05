@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import LoginPage from './loginPage.jsx';
 import AppStyle from './app.css';
 import Form from './customerForm.jsx';
+import ProductList from './Products.jsx';
 
 class App extends React.Component{
     constructor(props){
@@ -38,8 +39,10 @@ class App extends React.Component{
     render(){
         var {login} = this.state; 
         var {form} = this.state; 
+        var {product} = this.state;
         var loginPage;
         var customerForm;
+        var products;
         if(login === true){
             loginPage = 
             <div >
@@ -52,10 +55,20 @@ class App extends React.Component{
                 <Form submitForm = {this.submitForm}/>
             </div>
         }
+        if(product === true){
+            products = 
+            <div>
+                <ProductList />
+            </div>
+        }
         return (
             <div className={AppStyle.appBackground}>
+              <div className={AppStyle.title}>
+                Pace Bank
+              </div>
                {loginPage}
                {customerForm}
+               {products}
            </div>
         )
     }

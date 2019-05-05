@@ -14,9 +14,6 @@ class LoginPage extends React.Component{
             <div className={login.wholePage}>
 
                 <div className={login.wholePageInner}> 
-                    <div className={login.title}>
-                        Pace Bank
-                    </div>
 
                     <div className={login.credentials}>
                         <div className={login.fields}>

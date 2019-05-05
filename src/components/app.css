@@ -1,5 +1,12 @@
 .appBackground{
     width: 100vw;
     height: 100vw; 
-    background-color: blue;
+    background-color: limegreen;
+}
+
+.title{
+    background: blue; 
+    color: white;
+    height: 80px;
+    font-size: 30px;
 }
