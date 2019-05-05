@@ -5,8 +5,11 @@
 }
 
 .title{
+    padding-top: 30px;
+    padding-left: 30px;
     background: blue; 
     color: white;
     height: 80px;
     font-size: 30px;
+    font-weight: bold;
 }
