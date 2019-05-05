@@ -17,7 +17,9 @@ class LoginPage extends React.Component{
     render(){
         return (
             <div className={login.wholePage}>
-
+                <div className={login.TopTitle}>
+                    Login
+                </div>
                 <div className={login.wholePageInner}> 
 
                     <div className={login.credentials}>
@@ -32,10 +34,10 @@ class LoginPage extends React.Component{
 
                         <div className={login.fieldsInput}>
                             <div>
-                              <input type ='text' onChange={this.props.handleUsername}></input>
+                              <input type ='text' onChange={this.props.handleUsername} className={login.username}></input>
                             </div>
                             <div>
-                              <input type ={this.state.hidden ? 'password': 'text'} onChange={this.props.handlePassword}></input>
+                              <input type ={this.state.hidden ? 'password': 'text'} onChange={this.props.handlePassword} className={login.password}></input>
                               <input type ='submit' value="Show/Hide" onClick={this.hidePassword}></input>
                             </div>
                             <div>

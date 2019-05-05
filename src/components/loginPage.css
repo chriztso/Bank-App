@@ -1,6 +1,7 @@
 .wholePage{
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 3px solid white;
@@ -8,6 +9,28 @@
     width: 40%;
     position: relative; 
     left: 250px; 
+}
+
+.TopTitle{
+    color: white; 
+    font-size: 20px; 
+    border-bottom: 1px solid white;
+}
+
+.username{
+    color:white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+}
+
+.password{
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
 }
 
 .title{
