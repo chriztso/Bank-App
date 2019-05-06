@@ -8,6 +8,14 @@
   color: white;
 }
 
+.element{
+    margin-bottom: 20px; 
+}
+
+.inputField{
+   margin-bottom: 20px;
+}
+
 .formElements{
     display: flex; 
     flex-direction: row;

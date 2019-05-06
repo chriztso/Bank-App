@@ -14,11 +14,21 @@ class App extends React.Component{
             product: false,
             username: null, 
             password: null, 
-            warning: false
+            warning: false, 
+            firstName: null, 
+            lastName: null, 
+            address: null, 
+            zipCode: null, 
+            city: null, 
+            state: null, 
+            occupation: null, 
+            company: null, 
+            income: null
         }
     this.handlePassword = this.handlePassword.bind(this);   
     this.handleUsername = this.handleUsername.bind(this);   
     this.submitLogin = this.submitLogin.bind(this);   
+    this.handleFormInput = this.handleFormInput.bind(this);
     this.submitForm = this.submitForm.bind(this);   
     }
 
@@ -35,6 +45,11 @@ class App extends React.Component{
         } else{
            this.setState({warning: true});
         }    
+    }
+
+    handleFormInput(event){
+        var name = event.target.name;
+        this.setState({[name] : event.target.value});
     }
 
     submitForm(){
@@ -73,7 +88,7 @@ class App extends React.Component{
         if(form === true){
             customerForm = 
             <div >
-                <Form submitForm = {this.submitForm}/>
+                <Form submitForm = {this.submitForm} handleFormInput = {this.handleFormInput}/>
             </div>
         }
         if(product === true){
