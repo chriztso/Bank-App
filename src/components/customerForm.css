@@ -16,6 +16,17 @@
    margin-bottom: 20px;
 }
 
+.inputFieldOuter{
+    display: flex; 
+    flex-direction: row; 
+}
+
+.required{
+    margin-left: 10px;
+    color: white; 
+    font-weight: bold;
+}
+
 .formElements{
     display: flex; 
     flex-direction: row;

@@ -23,7 +23,8 @@ class App extends React.Component{
             state: null, 
             occupation: null, 
             company: null, 
-            income: null
+            income: null,
+            incompleteForm: false
         }
     this.handlePassword = this.handlePassword.bind(this);   
     this.handleUsername = this.handleUsername.bind(this);   
@@ -53,7 +54,12 @@ class App extends React.Component{
     }
 
     submitForm(){
-        this.setState({form: false, product: true});
+        if(this.state.firstName !== null && this.state.lastName !== null && this.state.address !== null && this.state.zipCode !== null && this.state.city !== null 
+        & this.state.state !== null && this.state.occupation !== null && this.state.company !== null && this.state.income !== null){
+          this.setState({form: false, product: true});
+        } else{
+            this.setState({incompleteForm : true});
+        }
     }
 
     render(){
@@ -80,7 +86,7 @@ class App extends React.Component{
             }
             loginPage = 
             <div >
-                <LoginPage handlePassword = {this.handlePassword} handleUsername = {this.handleUsername} submitLogin={this.submitLogin}/>
+                <LoginPage handlePassword = {this.handlePassword} handleUsername = {this.handleUsername} submitLogin={this.submitLogin} />
                 {warningOne}
                 {warningTwo}
             </div>
@@ -88,7 +94,7 @@ class App extends React.Component{
         if(form === true){
             customerForm = 
             <div >
-                <Form submitForm = {this.submitForm} handleFormInput = {this.handleFormInput}/>
+                <Form submitForm = {this.submitForm} handleFormInput = {this.handleFormInput} info={this.state} status={this.state.incompleteForm}/>
             </div>
         }
         if(product === true){
