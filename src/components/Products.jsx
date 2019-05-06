@@ -13,7 +13,7 @@ class ProductList extends React.Component{
 
     render(){
         return (
-            <div>
+            <div className = {Product.wholeProducts}>
                 <div className={Product.list}>
                    Products 
                 </div>

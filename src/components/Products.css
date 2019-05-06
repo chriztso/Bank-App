@@ -1,3 +1,8 @@
+.wholeProducts{
+    margin-left: 20px; 
+    margin-top: 20px;
+}
+
 .list{
     font-size: 40px;
     color: white;
@@ -6,4 +11,11 @@
 .text{
     color: white;
     font-size: 20px;
+    height: 50px;
+    width: 400px;
+}
+
+.text:hover{
+    border: 1px solid white;
+    border-radius: 3px;
 }
